@@ -26,7 +26,10 @@ const Hero = () => {
           </div>
           <div className={cx("hero_section_left_search")}>
             <h1>Easily search for Tables or Food with our tool.</h1>
-            <FilterBar/>
+            <FilterBar />
+          </div>
+          <div className={cx("hero_section_left_slider_restaurant")}>
+            <h1>Little Lemon's Branches</h1>
           </div>
         </div>
         <div className={cx("hero_section_right")}>
