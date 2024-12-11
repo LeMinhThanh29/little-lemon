@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styles from "../Filter/scss/FilterBar.module.scss";
+import styles from "./scss/DateTimePicker.module.scss";
 import classNames from "classnames/bind";
 type DATE_TIME = "date" | "time";
 interface DateTimeProps {
@@ -11,7 +11,7 @@ interface DateTimeProps {
   id: string;
 }
 const cx = classNames.bind(styles);
-const DateTime = (props: DateTimeProps) => {
+const DateTimePicker = (props: DateTimeProps) => {
   const { handleChange, type, data, icon, name, id } = props;
   const ref = useRef<HTMLInputElement | null>(null);
 
@@ -43,4 +43,4 @@ const DateTime = (props: DateTimeProps) => {
   );
 };
 
-export default DateTime;
+export default DateTimePicker;

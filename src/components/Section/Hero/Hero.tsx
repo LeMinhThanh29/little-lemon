@@ -7,6 +7,7 @@ import {
   restaurant,
 } from "../../../assets/image";
 import FilterBar from "../../Filter/FilterBar";
+import RestaurantList from "../../RestaurantCard/RestaurantList";
 const cx = classNames.bind(styles);
 const Hero = () => {
   return (
@@ -29,7 +30,8 @@ const Hero = () => {
             <FilterBar />
           </div>
           <div className={cx("hero_section_left_slider_restaurant")}>
-            <h1>Little Lemon's Branches</h1>
+           
+            <RestaurantList/>
           </div>
         </div>
         <div className={cx("hero_section_right")}>

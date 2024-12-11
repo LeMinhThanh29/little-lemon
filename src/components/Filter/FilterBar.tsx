@@ -12,6 +12,8 @@ import {
 import DateTimePicker from "../DateTimePicker/DateTimePicker";
 import Select from "../Select/Select";
 import { categoryItems } from "../../Data/category";
+import FilterBarFood from "./FilterBarFood";
+import FilterBarRestaurant from "./FilterBarRestaurant";
 
 const cx = classNames.bind(styles);
 const FilterBar = () => {
@@ -73,67 +75,13 @@ const FilterBar = () => {
           ></div>
         </div>
         <div className={cx("filterBar_body")}>
-          {switchBox && true ? (
-            <div className={cx("filterBar_body_row_food")}>
-              <div className={cx("filterBar_items")}>
-                <img src={findFood} alt="" />
-                <Select
-                  id="filterBar_items_type_food"
-                  name="filterBar_items_type_food"
-                  list={categoryItems}
-                  handleChange={handleSelectTypeFood}
-                />
-              </div>
-              <div className={cx("filterBar_items")}>
-                <img src={inputsearchFood} alt="" />
-                <input
-                  type="text"
-                  name="search_food"
-                  id="search_food"
-                  placeholder="Search for food..."
-                />
-              </div>
-              <div className={cx("filterBar_items_button")}>
-                <img src={find} alt="" />
-                Search
-              </div>
-            </div>
+          {switchBox ? (
+            <FilterBarFood
+              items={categoryItems}
+              handleAction={handleSelectTypeFood}
+            />
           ) : (
-            <div className={cx("filterBar_body_row")}>
-              <div className={cx("filterBar_items")}>
-                <DateTimePicker
-                  icon={date}
-                  type="date"
-                  handleChange={handleDateChange}
-                  data={selectedDate}
-                  id="date"
-                  name="date"
-                />
-              </div>
-              <div className={cx("filterBar_items")}>
-                <DateTimePicker
-                  icon={time}
-                  type="time"
-                  handleChange={handleTimeChange}
-                  data={selectedTime}
-                  id="time"
-                  name="time"
-                />
-              </div>
-              <div className={cx("filterBar_items")}>
-                <img src={quality} alt="" />
-                <input
-                  type="number"
-                  name="member_quanlity"
-                  id="member_quanlity"
-                  placeholder="Enter Quantity "
-                />
-              </div>
-              <div className={cx("filterBar_items_button")}>
-                <img src={find} alt="" />
-                Search
-              </div>
-            </div>
+            <FilterBarRestaurant />
           )}
         </div>
       </div>

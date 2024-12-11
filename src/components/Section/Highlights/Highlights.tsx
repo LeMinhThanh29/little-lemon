@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 import styles from "./scss/Highlights.module.scss";
-import classNames from 'classnames/bind';
+import classNames from "classnames/bind";
+import RestaurantList from "../../RestaurantCard/RestaurantList";
 const cx = classNames.bind(styles);
 const Highlights = () => {
   return (
-    <section>Highlights</section>
-  )
-}
+    <section>
 
-export default Highlights
+    </section>
+  );
+};
+
+export default Highlights;

@@ -8,12 +8,12 @@ import About from "../../components/Section/About/About";
 const cx = classNames.bind(styles);
 const Home = () => {
   return (
-    <div className={cx("home_container")}>
+    <>
       <Hero />
       <Highlights />
       <Testimonials />
       <About />
-    </div>
+    </>
   );
 };
 

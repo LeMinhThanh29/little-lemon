@@ -9,6 +9,8 @@ import quality from "./icon/quanlity.png";
 import find from "./icon/find.png";
 import findFood from "./icon/find_food.png";
 import inputsearchFood from "./icon/search-food.png";
+import next from "./icon/next.png";
+import previous from "./icon/previous.png";
 export {
   findFood,
   find,
@@ -19,5 +21,7 @@ export {
   date,
   time,
   quality,
-  inputsearchFood
+  inputsearchFood,
+  previous,
+  next,
 };

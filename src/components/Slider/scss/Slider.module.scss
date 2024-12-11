@@ -1,0 +1,40 @@
+.restaurant_list_container {
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+    .restaurant_list_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .restaurant_list_action {
+        button {
+          border: none;
+          outline: none;
+          background-color: #e8e8e8;
+          width: 38px;
+          height: 38px;
+          margin-left: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          cursor: pointer;
+        
+          img {
+            vertical-align: auto;
+            width: 15px;
+          }
+        }
+      }
+    }
+    .restaurant_list_wrapper {
+      position: relative;
+      .restaurant_list_row {
+        display: flex;
+        margin-top: 10px;
+        width: max-content;
+        transform: translateX(0px);
+        transition: all 1s ease;
+        gap: 5px;
+      }
+    }
+  }
+  

@@ -1,0 +1,13 @@
+.placeholder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  flex: 1;
+  height: 100%;
+  &:hover {
+    color: #2c5c4b;
+  }
+}
