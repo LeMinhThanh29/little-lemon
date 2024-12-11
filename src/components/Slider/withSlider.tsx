@@ -1,4 +1,10 @@
-import React, { ComponentType, ReactNode, useRef, useState } from "react";
+import React, {
+  ComponentType,
+  ReactNode,
+  useCallback,
+  useRef,
+  useState,
+} from "react";
 export interface SliderProps<T> {
   CARD_WIDTH: number;
   CONTAINER_WIDTH: number;
@@ -9,7 +15,9 @@ export interface SliderProps<T> {
 }
 type SLIDER_TYPE = "LEFT" | "RIGHT";
 const withSlider = <T,>(WrappedComponent: ComponentType<SliderProps<T>>) => {
-  return (props: Omit<SliderProps<T>, "action" | "listRef" | "currentIndex">) => {
+  return (
+    props: Omit<SliderProps<T>, "action" | "listRef" | "currentIndex">
+  ) => {
     const { CARD_WIDTH, CONTAINER_WIDTH, ITEMS } = props;
     const listRef = useRef<HTMLDivElement>(null);
     const [currentIndex, setCurrentIndex] = useState(0); // Vị trí hiện tại của slider
@@ -17,7 +25,7 @@ const withSlider = <T,>(WrappedComponent: ComponentType<SliderProps<T>>) => {
     const TOTAL_ITEMS = ITEMS.length; // Tổng số item
 
     // Khi nhấn thì index tăng lên 1, lấy Index đó nhân cho tổng chiều dài của box, rồi thực hiện translate
-    const handleClick = (type: SLIDER_TYPE) => {
+    const handleClick = useCallback((type: SLIDER_TYPE) => {
       if (!listRef.current) return;
 
       let newIndex = currentIndex;
@@ -34,7 +42,7 @@ const withSlider = <T,>(WrappedComponent: ComponentType<SliderProps<T>>) => {
       listRef.current.style.transform = `translateX(${
         -newIndex * CARD_WIDTH
       }px)`;
-    };
+    }, [currentIndex]);
 
     return (
       <WrappedComponent

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./scss/Slider.module.scss";
 import classNames from "classnames/bind";
 import { next, previous } from "../../assets/icons";
@@ -36,4 +36,4 @@ const Slider: React.FC<SliderProps<RestaurantCardProps>> = ({
   );
 };
 const SliderWrapped = withSlider(Slider);
-export default SliderWrapped;
+export default memo(SliderWrapped);
