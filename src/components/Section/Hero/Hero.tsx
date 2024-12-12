@@ -7,8 +7,12 @@ import {
   restaurant,
 } from "../../../assets/image";
 import FilterBar from "../../Filter/FilterBar";
-import RestaurantList from "../../RestaurantCard/RestaurantList";
+import { restaurantData } from "../../../Model/RestaurantCardModel";
+import SliderBar from "../../Slider/Slider";
+import RestaurantCard from "../../RestaurantCard/RestaurantCard";
 const cx = classNames.bind(styles);
+const CARD_WIDTH: number = 230; // Dựa vào chiều dài của desigm Card
+const CONTAINER_WIDTH: number = 700;
 const Hero = () => {
   return (
     <section className={cx("hero_section_container")}>
@@ -30,8 +34,14 @@ const Hero = () => {
             <FilterBar />
           </div>
           <div className={cx("hero_section_left_slider_restaurant")}>
-           
-            <RestaurantList/>
+            <SliderBar
+              title="Little Lemon's Branches"
+              CARD_WIDTH={CARD_WIDTH}
+              CONTAINER_WIDTH={CONTAINER_WIDTH}
+              ITEMS={restaurantData}
+            >
+              {RestaurantCard}
+            </SliderBar>
           </div>
         </div>
         <div className={cx("hero_section_right")}>

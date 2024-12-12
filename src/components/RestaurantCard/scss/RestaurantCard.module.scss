@@ -1,9 +1,82 @@
 .restaurant_card_container {
   width: 225px;
-  height: 187px;
-  background-color: black;
-  overflow: hidden;
+  height: fit-content;
   cursor: pointer;
-  color: white;
   border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid #e7e7e7dd;
+  transition: all 0.5s ease;
+  padding: 12px;
+  box-sizing: border-box;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .restaurant_card_header {
+    .restaurant_card_header_content {
+      position: relative;
+      .restaurant_card_header_content_background {
+        width: 100%;
+        max-height: 120px;
+        border-radius: 5px;
+      }
+
+      .restaurant_react {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        img {
+          max-width: 12px;
+        }
+        div {
+          max-width: 20px;
+          max-height: 20px;
+          border-radius: 50%;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .restaurant_save {
+          background-color: white;
+        }
+        .restaurant_like {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  .restaurant_card_body {
+    .restaurant_card_body_content {
+      .title {
+        font-size: 1rem;
+      }
+      .address {
+        font-size: 0.9rem;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .rating_feedback {
+        display: flex;
+        margin-top: 5px;
+        .rating {
+          font-size: 0.8rem;
+        }
+        .feedback {
+          font-size: 0.8rem;
+          color: #7E8292;
+        }
+      }
+    }
+  }
 }

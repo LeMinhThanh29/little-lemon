@@ -17,7 +17,8 @@ export const restaurantData: RestaurantCardProps[] = [
     rating: 4.5,
     like: true,
     save: false,
-    image: "https://example.com/images/little-lemon.jpg",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?q=80&w=1789&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     feedbackQuanlity: 90,
   },
   {
@@ -27,7 +28,8 @@ export const restaurantData: RestaurantCardProps[] = [
     rating: 4.7,
     like: true,
     save: true,
-    image: "https://example.com/images/spicy-delights.jpg",
+    image:
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     feedbackQuanlity: 85,
   },
   {
@@ -37,7 +39,8 @@ export const restaurantData: RestaurantCardProps[] = [
     rating: 4.2,
     like: false,
     save: true,
-    image: "https://example.com/images/ocean-breeze.jpg",
+    image:
+      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     feedbackQuanlity: 75,
   },
   {
@@ -47,7 +50,8 @@ export const restaurantData: RestaurantCardProps[] = [
     rating: 4.8,
     like: true,
     save: false,
-    image: "https://example.com/images/mountain-feast.jpg",
+    image:
+      "https://images.unsplash.com/photo-1494346480775-936a9f0d0877?q=80&w=2016&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     feedbackQuanlity: 95,
   },
   {
@@ -57,7 +61,8 @@ export const restaurantData: RestaurantCardProps[] = [
     rating: 3.9,
     like: false,
     save: false,
-    image: "https://example.com/images/sunset-diner.jpg",
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     feedbackQuanlity: 65,
   },
   {
@@ -67,7 +72,8 @@ export const restaurantData: RestaurantCardProps[] = [
     rating: 4.6,
     like: true,
     save: true,
-    image: "https://example.com/images/garden-grill.jpg",
+    image:
+      "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     feedbackQuanlity: 80,
   },
 ];

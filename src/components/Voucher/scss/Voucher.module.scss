@@ -1,0 +1,169 @@
+.voucher_card_container {
+  width: 500px;
+  position: relative;
+  .voucher_card_row {
+    height: 173px;
+    background-color: #fefbe8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .voucher_card_left {
+      width: 100%;
+      max-width: 133px;
+      flex: 1;
+      height: 100%;
+      border-right: 2px dashed gray;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      .voucher_card_ticket {
+        background-color: #f4ce14;
+        height: 100%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+          white-space: nowrap;
+          text-align: center;
+          transform: rotate(-90deg);
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+        }
+      }
+      .voucher_card_box_ticket_icon {
+        width: 100%;
+        max-width: 70px;
+        height: 70px;
+        margin: auto;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(221, 221, 221);
+        img {
+          max-width: 35px;
+        }
+      }
+    }
+    .voucher_card_right {
+      flex: 2;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .voucher_card_right_body {
+        flex: 7;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: relative;
+
+        z-index: 1;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          opacity: 0.3;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-image: url("../../../assets/image/lemon_voucher.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position-x: right;
+          background-position-y: bottom;
+          background-color: #dedede;
+         
+        }
+        .voucher_card_right_ticket_header {
+          h1 {
+            font-size: 1.5rem;
+            color: #d1ae00;
+            padding: 0px;
+            margin: 0px;
+           
+          }
+          p {
+            font-size: 0.7rem;
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+        .voucher_card_right_ticket_body {
+          text-align: center;
+          h1 {
+            font-size: 5rem;
+            line-height: 85%;
+          }
+        }
+        .voucher_card_right_ticket_footer {
+          .voucher_card_right_ticket_voucherTerms {
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+            overflow: hidden;
+            p {
+              margin: 0;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              flex: 1;
+            }
+            a {
+              font-size: 0.7rem;
+              margin-left: 5px;
+              flex-shrink: 0;
+              text-decoration: none;
+              color: #007bff;
+            }
+          }
+          p {
+            text-align: center;
+            font-size: 0.7rem;
+          }
+        }
+      }
+      .voucher_card_ticket_claims {
+        flex: 1;
+        cursor: pointer;
+        background-color: #27A26D;
+        height: 100%;
+        border-left: 2px dashed white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 100px;
+          max-width: 30px;
+        }
+      }
+    }
+  }
+  .voucher_card_box_container {
+    width: fit-content;
+    height: 115%;
+    position: absolute;
+    z-index: 1;
+    top: -12px;
+    left: 24.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: white;
+    }
+  }
+}
