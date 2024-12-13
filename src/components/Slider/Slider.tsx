@@ -1,4 +1,4 @@
-import React, { ElementType, ReactNode } from "react";
+import React from "react";
 import withSlider, { SliderProps } from "./withSlider";
 import classNames from "classnames/bind";
 import styles from "./scss/Slider.module.scss";

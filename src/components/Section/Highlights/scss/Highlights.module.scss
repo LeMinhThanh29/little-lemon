@@ -2,4 +2,7 @@
   max-width: 1440px;
   margin: auto;
   padding-top: 50px;
+  article:not(:nth-of-type(1)) {
+    margin-top: 50px;
+  }
 }

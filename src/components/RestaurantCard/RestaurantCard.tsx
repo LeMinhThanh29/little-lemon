@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import React from "react";
 import styles from "./scss/RestaurantCard.module.scss";
-import { RestaurantCardProps } from "../../Model/RestaurantCardModel";
+import { RestaurantCardProps } from "../../model/RestaurantCardModel";
 import {
   heartIcon,
   no_react_heartIcon,

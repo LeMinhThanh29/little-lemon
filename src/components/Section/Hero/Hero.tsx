@@ -7,7 +7,7 @@ import {
   restaurant,
 } from "../../../assets/image";
 import FilterBar from "../../Filter/FilterBar";
-import { restaurantData } from "../../../Model/RestaurantCardModel";
+import { restaurantData } from "../../../model/RestaurantCardModel";
 import SliderBar from "../../Slider/Slider";
 import RestaurantCard from "../../RestaurantCard/RestaurantCard";
 const cx = classNames.bind(styles);

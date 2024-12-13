@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./scss/Voucher.module.scss";
 import classNames from "classnames/bind";
-import { VoucherModel } from "../../Model/VoucherModel";
+import { VoucherModel } from "../../model/VoucherModel";
 import { tear_ticket } from "../../assets/icons";
+import { formattedDate } from "../../utils/DateFormatter";
 const cx = classNames.bind(styles);
 const Voucher = (props: VoucherModel) => {
   const {
@@ -14,13 +15,7 @@ const Voucher = (props: VoucherModel) => {
     endDate,
     startDate,
   } = props;
-  const formattedDate = (date: Date) => {
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
+
   return (
     <div className={cx("voucher_card_container")}>
       <div className={cx("voucher_card_row")}>

@@ -1,7 +1,6 @@
 import React, {
   ComponentType,
   ElementType,
-  ReactNode,
   useCallback,
   useRef,
   useState,
@@ -12,7 +11,7 @@ export interface SliderProps<T> {
   ITEMS: T[];
   action: (type: SLIDER_TYPE) => void;
   listRef: React.RefObject<HTMLDivElement>;
-  children: ElementType; 
+  children: ElementType;
   title: string;
 }
 type SLIDER_TYPE = "LEFT" | "RIGHT";
@@ -21,7 +20,7 @@ const withSlider = <T,>(WrappedComponent: ComponentType<SliderProps<T>>) => {
     props: Omit<SliderProps<T>, "action" | "listRef">
     // Omit: Tạo ra 1 thực thể mới dựa vào thực thể cũ, và sẽ không bao gồm các thuộc tính/phương thức được chỉ định trong Omit
   ) => {
-    const { CARD_WIDTH, CONTAINER_WIDTH, ITEMS, children, title } = props;
+    const { CARD_WIDTH, CONTAINER_WIDTH, ITEMS, children } = props;
     const listRef = useRef<HTMLDivElement>(null);
     const [currentIndex, setCurrentIndex] = useState(0); // Vị trí hiện tại của slider
     const MAX_VISIBLE_ITEMS = Math.floor(CONTAINER_WIDTH / CARD_WIDTH); // Số lượng item tối đa có thể đi được
@@ -43,13 +42,14 @@ const withSlider = <T,>(WrappedComponent: ComponentType<SliderProps<T>>) => {
         } else {
           return;
         }
-
+       
+        
         setCurrentIndex(newIndex); // Cập nhật vị trí mới
         listRef.current.style.transform = `translateX(${
           -newIndex * CARD_WIDTH
         }px)`;
       },
-      [currentIndex]
+      [currentIndex, CARD_WIDTH, MAX_VISIBLE_ITEMS, TOTAL_ITEMS]
     );
 
     return (

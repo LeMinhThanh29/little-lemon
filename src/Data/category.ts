@@ -1,4 +1,4 @@
-import { SelectModel, SelectModelValue } from "../Model/SelectModel";
+import { SelectModelValue } from "../model/SelectModel";
 
 export const categoryItems: SelectModelValue[] = [
   { value: "fries", label: "Fries" },
@@ -14,5 +14,3 @@ export const categoryItems: SelectModelValue[] = [
   { value: "wines", label: "Wines" },
   { value: "snacks", label: "Snacks" },
 ];
-
-

@@ -1,17 +1,7 @@
 import classNames from "classnames/bind";
 import React, { useState } from "react";
 import styles from "./scss/FilterBar.module.scss";
-import {
-  date,
-  time,
-  quality,
-  find,
-  findFood,
-  inputsearchFood,
-} from "../../assets/icons";
-import DateTimePicker from "../DateTimePicker/DateTimePicker";
-import Select from "../Select/Select";
-import { categoryItems } from "../../Data/category";
+import { categoryItems } from "../../data/category";
 import FilterBarFood from "./FilterBarFood";
 import FilterBarRestaurant from "./FilterBarRestaurant";
 
@@ -20,19 +10,6 @@ const FilterBar = () => {
   // State
   const [switchBox, setSwitchBox] = useState<boolean>(false);
   const [statusLabel, setStatusLabel] = useState<boolean[]>([true, false]);
-
-  // Ref
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
-
-  //Function
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedDate(event.target.value);
-  };
-
-  const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedTime(event.target.value);
-  };
 
   const handleStatusClick = (status: boolean) => {
     setSwitchBox(status);

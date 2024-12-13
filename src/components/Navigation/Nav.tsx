@@ -49,7 +49,7 @@ const Nav = () => {
         <div className={cx("cicle")}>
           <img src={cart} alt="" />
         </div>
-        <Button text="Revertation" />
+        <Button>Revertation</Button>
       </div>
     </nav>
   );

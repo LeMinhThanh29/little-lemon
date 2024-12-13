@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectModel } from "../../Model/SelectModel";
+import { SelectModel } from "../../model/SelectModel";
 
 const Select = (props: SelectModel) => {
   const { handleChange, id, list, name } = props;

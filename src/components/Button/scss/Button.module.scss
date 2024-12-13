@@ -1,7 +1,8 @@
 .button_container {
   border: none;
   outline: none;
-  padding: 12px;
+  width: 100%;
+  height: 40px;
   width: 168px;
   border-radius: 36px;
   font-weight: bold;
@@ -9,4 +10,11 @@
   background-color: #f4ce14;
   font-size: 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    max-width: 1.2rem;
+  }
 }

@@ -3,7 +3,7 @@ import styles from "./scss/FilterBarFood.module.scss";
 import classNames from "classnames/bind";
 import Select from "../Select/Select";
 import { find, findFood, inputsearchFood } from "../../assets/icons";
-import { SelectModelValue } from "../../Model/SelectModel";
+import { SelectModelValue } from "../../model/SelectModel";
 
 interface FilterBarFoodPros {
   items: SelectModelValue[];

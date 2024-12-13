@@ -1,14 +1,14 @@
 import classNames from "classnames/bind";
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./scss/Button.module.scss";
 interface ButtonProps {
-  text: string;
+  children: ReactNode;
 }
 
 const cx = classNames.bind(styles);
 const Button = (props: ButtonProps) => {
-  const { text } = props;
-  return <button className={cx("button_container")}>{text}</button>;
+  const { children } = props;
+  return <button className={cx("button_container")}>{children}</button>;
 };
 
 export default Button;

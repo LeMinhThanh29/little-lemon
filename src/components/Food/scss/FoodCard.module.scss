@@ -1,0 +1,95 @@
+.food_card_container {
+  &:hover {
+    .food_card_row {
+      .food_card_header {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  .food_card_row {
+    max-width: 260px;
+    width: 100%;
+    padding: 10px;
+    background-color: #eff0f0;
+    border-radius: 8px;
+
+    .food_card_header {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 10px;
+      img {
+        width: 100%;
+        transition: all 0.5s ease;
+      }
+    }
+    .food_card_body {
+      margin-top: 10px;
+      .food_card_body_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        p {
+          font-size: 1rem;
+          font-weight: bold;
+          &:nth-of-type(2) {
+            color: #2c5c4b;
+          }
+          &:nth-of-type(1) {
+            flex: 1;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+      }
+      .food_card_body_infomation {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+        a {
+          color: #007bff;
+        }
+      }
+      .food_card_body_delivery {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 1rem;
+        img {
+          max-width: 20px;
+        }
+      }
+    }
+    .food_card_footer {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      button {
+        font-size: 0.8rem;
+        border-radius: 7px;
+        &:nth-of-type(1) {
+          flex: 9;
+          background-color: #f0ecd4;
+        }
+        &:nth-of-type(2) {
+          flex: 1;
+          padding: 10px;
+          background-color: #2c5c4b;
+        }
+      }
+    }
+  }
+}
