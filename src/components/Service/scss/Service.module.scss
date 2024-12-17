@@ -1,0 +1,28 @@
+.service_box {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .service_box_icon {
+    background-color: white;
+    cursor: pointer;
+    padding: 13px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2c5c4b;
+    img {
+      width: 100%;
+      max-width: 20px;
+    }
+  }
+  p {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #2c5c4b;
+    margin: auto;
+  }
+}

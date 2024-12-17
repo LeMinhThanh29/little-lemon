@@ -31,7 +31,21 @@ import ColaCan from "./icon/ColaCan.png";
 import Fish from "./icon/fish_782930.png";
 import Snacks from "./icon/snacks_3814603.png";
 import Wine from "./icon/wine_3109538.png";
+import service_shipper from "./icon/scooter_2304804.png";
+import service_room from "./icon/room-service_501368.png";
+import service_wedding from "./icon/wedding-dinner_6491246.png";
+import service_reserved from "./icon/reserved_2702515.png";
+import service_food from "./icon/food_5977158.png";
+import service_loyalty from "./icon/loyalty-program_17388318.png";
+import cancel_X from "./icon/x.png";
 export {
+  cancel_X,
+  service_shipper,
+  service_room,
+  service_wedding,
+  service_reserved,
+  service_food,
+  service_loyalty,
   Burger,
   Breakfast,
   Fries,

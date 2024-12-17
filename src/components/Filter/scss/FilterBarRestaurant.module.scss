@@ -57,3 +57,37 @@
     font-weight: bold;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .filterBar_body_row {
+ 
+    img {
+      width: 18px;
+    }
+
+    .filterBar_items {
+      &:nth-of-type(-n + 3) {
+        max-width: 198px;
+      }
+      &:nth-of-type(-n + 2) {
+      }
+      & input,
+      & select {
+      }
+
+      &:nth-of-type(3) {
+        img {
+          display: none;
+        }
+        input {
+        }
+      }
+    }
+    .filterBar_items_button {
+      padding: 15px;
+      p {
+        display: none;
+      }
+    }
+  }
+}

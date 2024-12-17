@@ -1,18 +1,32 @@
 import classNames from "classnames/bind";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./scss/Nav.module.scss";
-import { logo, cart, dropdown, hamburger_menu } from "../../assets/icons";
+import {
+  logo,
+  cart,
+  dropdown,
+  hamburger_menu,
+  cancel_X,
+} from "../../assets/icons";
 import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import { routers } from "../../routers/Router";
 const cx = classNames.bind(styles);
 const Nav = () => {
+  const [visible, setVisible] = useState(false);
+  const handleVisibleMenu = () => {
+    setVisible((prevVisible) => !prevVisible);
+  };
   return (
     <nav className={cx("navigation_container")}>
       <div className={cx("navigation_left")}>
-        <ul>
-          <li>
-            <img src={hamburger_menu} alt="" />
+        <ul className={cx("navigation_left_link_nav")}>
+          <li onClick={handleVisibleMenu}>
+            <div className={cx("hambuger_icon", { visible: visible })}>
+              <div className={cx("hambuger_icon_item")}></div>
+              <div className={cx("hambuger_icon_item")}></div>
+              <div className={cx("hambuger_icon_item")}></div>
+            </div>
           </li>
           <li>
             <NavLink to="/">
@@ -34,6 +48,24 @@ const Nav = () => {
               </li>
             ))}
         </ul>
+        <div className={cx("hambuger_nav", { visible: visible })}>
+          <ul className={cx("hambuger_nav_link")}>
+            {routers.map((value, index) => (
+              <li key={index}>
+                <NavLink
+                  to={value.path}
+                  className={({ isActive }) =>
+                    isActive ? cx("active") : cx("navigation_link")
+                  }
+                  onClick={() => setVisible(false)}
+                >
+                  {value.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <div className={cx("hambuger_nav_background")}></div>
+        </div>
       </div>
       <div className={cx("navigation_right")}>
         <div className={cx("dropdown")}>

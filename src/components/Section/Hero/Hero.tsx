@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./scss/Hero.module.scss";
 import classNames from "classnames/bind";
 import {
@@ -11,9 +11,24 @@ import { restaurantData } from "../../../model/RestaurantCardModel";
 import SliderBar from "../../Slider/Slider";
 import RestaurantCard from "../../RestaurantCard/RestaurantCard";
 const cx = classNames.bind(styles);
-const CARD_WIDTH: number = 230; // Dựa vào chiều dài của desigm Card
-const CONTAINER_WIDTH: number = 700;
+const CARD_WIDTH: number = 230;
 const Hero = () => {
+  const refWidth = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (refWidth.current) {
+        setContainerWidth(refWidth.current.clientWidth);
+      }
+    });
+    return window.addEventListener("resize", () => {
+      if (refWidth.current) {
+        setContainerWidth(refWidth.current.clientWidth);
+      }
+    });
+  }, []);
+
   return (
     <section className={cx("hero_section_container")}>
       <div className={cx("hero_section_row")}>
@@ -33,11 +48,14 @@ const Hero = () => {
             <h1>Easily search for Tables or Food with our tool.</h1>
             <FilterBar />
           </div>
-          <div className={cx("hero_section_left_slider_restaurant")}>
+          <div
+            className={cx("hero_section_left_slider_restaurant")}
+            ref={refWidth}
+          >
             <SliderBar
               title="Little Lemon's Branches"
               CARD_WIDTH={CARD_WIDTH}
-              CONTAINER_WIDTH={CONTAINER_WIDTH}
+              CONTAINER_WIDTH={containerWidth}
               ITEMS={restaurantData}
             >
               {RestaurantCard}

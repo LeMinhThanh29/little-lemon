@@ -77,3 +77,51 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .hero_section_container {
+    .hero_section_row {
+      .hero_section_left {
+        padding: 0px 10px;
+        box-sizing: border-box;
+        .hero_section_left_content {
+          h1 {
+            font-size: 2.5rem;
+            span {
+            }
+          }
+          .current_branch {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+        }
+        .hero_section_left_search {
+          h1 {
+            font-size: 1rem;
+          }
+        }
+        .hero_section_left_slider_restaurant {
+          h1 {
+            font-size: 1rem;
+          }
+          max-width: 390px;
+        }
+      }
+      .hero_section_right {
+        display: none;
+        .image_container {
+          img {
+            &:nth-of-type(1) {
+            }
+            &:nth-of-type(2) {
+            }
+            &:nth-of-type(3) {
+            }
+          }
+        }
+      }
+    }
+  }
+}

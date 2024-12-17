@@ -13,10 +13,12 @@ const Testimonials = () => {
   };
   return (
     <section className={cx("testimonials_container")}>
-      Testimonials
-      {top3Review().map((value, index) => (
-        <Review {...value} key={index} />
-      ))}
+      <h1>Testimonials</h1>
+      <div className={cx("testimonials_row")}>
+        {top3Review().map((value, index) => (
+          <Review {...value} key={index} />
+        ))}
+      </div>
     </section>
   );
 };

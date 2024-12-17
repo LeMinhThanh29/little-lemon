@@ -1,4 +1,26 @@
 .testimonials_container {
   background-color: #f5f3ea;
-  height: 300px;
+  height: 500px;
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  padding: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .testimonials_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .testimonials_container {
+    display: none;
+  }
 }

@@ -29,7 +29,7 @@ const DateTimePicker = (props: DateTimeProps) => {
         onClick={(e) => handleLabelClick(e)}
       >
         <img src={icon} alt="" />
-        {data || `Select ${type === "date" ? "Date" : "Time"}`}
+        <p className={cx("filter_name")}>{data || `Select ${type === "date" ? "Date" : "Time"}`}</p>
       </label>
       <input
         ref={ref}

@@ -11,3 +11,15 @@
     color: #2c5c4b;
   }
 }
+@media screen and (max-width: 700px) {
+  .placeholder {
+    padding-left: 10px;
+    justify-content: center;
+    p {
+      font-size: .9rem;
+    }
+    img {
+      display: none;
+    }
+  }
+}

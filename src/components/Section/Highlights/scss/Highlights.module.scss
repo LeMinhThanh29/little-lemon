@@ -6,3 +6,9 @@
     margin-top: 50px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .highlights_section_container {
+    display: none;
+  }
+}

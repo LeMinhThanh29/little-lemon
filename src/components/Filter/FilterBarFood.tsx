@@ -34,7 +34,7 @@ const FilterBarFood = (props: FilterBarFoodPros) => {
       </div>
       <div className={cx("filterBar_items_button")}>
         <img src={find} alt="" />
-        Search
+       <p> Search</p>
       </div>
     </div>
   );

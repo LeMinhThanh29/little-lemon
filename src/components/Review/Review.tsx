@@ -38,7 +38,7 @@ const Review = (props: ReviewModel) => {
           </div>
         </div>
         <div className={cx("review_card_user_review")}>
-          <p>{review_content}</p>
+          <p>{review_content} </p>
         </div>
       </div>
     </div>
