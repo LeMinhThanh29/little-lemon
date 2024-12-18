@@ -55,9 +55,9 @@
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
-           height: 3rem;
+           height: 2.5rem;
         }
         a {
           color: #007bff;
