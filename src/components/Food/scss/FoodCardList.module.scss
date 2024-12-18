@@ -1,16 +1,20 @@
+@import "../../../assets/styles/global.scss";
+
+
 .food_card_list_container {
   margin-top: 50px;
   .food_card_list_row {
     .food_card_list_filter {
     }
     .food_card_list_grid {
-        margin-top: 20px;
+      margin-top: 20px;
       display: grid;
-      grid-template-columns: repeat(5, 260px);
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       grid-template-rows: auto;
       gap: 30px;
+      place-items: center;
     }
-    .food_card_list_action{
+    .food_card_list_action {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -18,3 +22,4 @@
     }
   }
 }
+

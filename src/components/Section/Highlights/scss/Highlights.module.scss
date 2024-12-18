@@ -1,14 +1,46 @@
+@import "../../../../assets/styles/global.scss";
+@import "../../../Food/scss/FoodCard.module.scss";
 .highlights_section_container {
   max-width: 1440px;
   margin: auto;
   padding-top: 50px;
+  padding: 50px 20px 0px 20px;
+  transition: all 1s ease;
   article:not(:nth-of-type(1)) {
     margin-top: 50px;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: $container-lg) {
   .highlights_section_container {
-    display: none;
+    max-width: 1200px;
+  }
+}
+@media screen and (max-width: $container-md) {
+  .highlights_section_container {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: $container-sm) {
+  .highlights_section_container {
+    max-width: 800px;
+  }
+}
+@media screen and (max-width: $container-xs) {
+  .highlights_section_container {
+    max-width: 400px !important;
+    padding: 50px 0px 0px 0px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .highlights_section_container {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .highlights_section_container {
+    max-width: 320px !important;
   }
 }

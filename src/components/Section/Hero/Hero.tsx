@@ -22,7 +22,7 @@ const Hero = () => {
         setContainerWidth(refWidth.current.clientWidth);
       }
     });
-    return window.addEventListener("resize", () => {
+    return window.removeEventListener("resize", () => {
       if (refWidth.current) {
         setContainerWidth(refWidth.current.clientWidth);
       }
@@ -33,33 +33,37 @@ const Hero = () => {
     <section className={cx("hero_section_container")}>
       <div className={cx("hero_section_row")}>
         <div className={cx("hero_section_left")}>
-          <div className={cx("hero_section_left_content")}>
-            <h1>
-              Little <span>Lemon</span>
-            </h1>
-            <span className={cx("current_branch")}>Chicago</span>
-            <p>
-              Little Lemon is a Mediterranean-inspired bar and small plates
-              restaurant focusing on fresh produce and big flavours, offering
-              bespoke cocktails and a premium wine selection.
-            </p>
-          </div>
-          <div className={cx("hero_section_left_search")}>
-            <h1>Easily search for Tables or Food with our tool.</h1>
-            <FilterBar />
-          </div>
-          <div
-            className={cx("hero_section_left_slider_restaurant")}
-            ref={refWidth}
-          >
-            <SliderBar
-              title="Little Lemon's Branches"
-              CARD_WIDTH={CARD_WIDTH}
-              CONTAINER_WIDTH={containerWidth}
-              ITEMS={restaurantData}
+          <div className={cx("hero_section_left_row")}>
+            <div className={cx("hero_section_left_content")}>
+              <h1>
+                Little <span>Lemon</span>
+              </h1>
+              <span className={cx("current_branch")}>Chicago</span>
+              <p>
+                Little Lemon is a Mediterranean-inspired bar and small plates
+                restaurant focusing on fresh produce and big flavours, offering
+                bespoke cocktails and a premium wine selection.
+              </p>
+            </div>
+            <div className={cx("hero_section_left_search")}>
+              <h1>Easily search for Tables or Food with our tool.</h1>
+              <FilterBar />
+            </div>
+            <div
+              className={cx("hero_section_left_slider_restaurant")}
+              ref={refWidth}
             >
-              {RestaurantCard}
-            </SliderBar>
+              <div>
+                <SliderBar
+                  title="Little Lemon's Branches"
+                  CARD_WIDTH={CARD_WIDTH}
+                  CONTAINER_WIDTH={containerWidth}
+                  ITEMS={restaurantData}
+                >
+                  {RestaurantCard}
+                </SliderBar>
+              </div>
+            </div>
           </div>
         </div>
         <div className={cx("hero_section_right")}>

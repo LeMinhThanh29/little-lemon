@@ -64,7 +64,6 @@ const Nav = () => {
               </li>
             ))}
           </ul>
-          <div className={cx("hambuger_nav_background")}></div>
         </div>
       </div>
       <div className={cx("navigation_right")}>

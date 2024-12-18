@@ -1,4 +1,10 @@
 .food_card_container {
+  max-width: 260px;
+  width: 100%;
+  padding: 10px;
+  background-color: #eff0f0;
+  border-radius: 8px;
+
   &:hover {
     .food_card_row {
       .food_card_header {
@@ -9,12 +15,7 @@
     }
   }
   .food_card_row {
-    max-width: 260px;
-    width: 100%;
-    padding: 10px;
-    background-color: #eff0f0;
-    border-radius: 8px;
-
+  
     .food_card_header {
       cursor: pointer;
       overflow: hidden;
@@ -47,14 +48,16 @@
         }
       }
       .food_card_body_infomation {
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-top: 10px;
+
         p {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
+           height: 3rem;
         }
         a {
           color: #007bff;

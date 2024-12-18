@@ -18,7 +18,7 @@ const Highlights = () => {
       <SliderBar
         title="Voucher"
         CARD_WIDTH={500}
-        CONTAINER_WIDTH={1440}
+        CONTAINER_WIDTH={400}
         ITEMS={voucherData}
       >
         {Voucher}
