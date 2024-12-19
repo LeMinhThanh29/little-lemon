@@ -1,6 +1,7 @@
+@import "../../../assets/styles/global.scss";
+
 .filterBar_body_row_food {
   overflow: hidden;
-
   height: 54px;
   background-color: white;
   border-radius: 0px 5px 5px 5px;
@@ -63,27 +64,28 @@
 
 @media screen and (max-width: 800px) {
   .filterBar_body_row_food {
-    img {
-    }
-
     .filterBar_items {
       &:nth-of-type(1) {
         max-width: 128px;
       }
+    }
+    .filterBar_items_button {
+      padding: 15px;
+      p {
+        display: none;
+      }
+    }
+  }
+}
 
-      &:nth-of-type(2) {
-        input {
-        }
+@media screen and (max-width: $container-xs) {
+  .filterBar_body_row_food {
+    .filterBar_items {
+      &:nth-of-type(1) {
+        max-width: 111px;
       }
 
-      & input,
-      & select {
-      }
-
-      &:nth-of-type(3) {
-        input {
-        }
-      }
+      padding-left: 10px;
     }
     .filterBar_items_button {
       padding: 15px;

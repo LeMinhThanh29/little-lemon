@@ -1,11 +1,12 @@
+@import "../../../../assets/styles/global.scss";
 .testimonials_container {
   background-color: #f5f3ea;
-  height: 500px;
+
   h1 {
     text-align: center;
     font-size: 2rem;
   }
-  padding: 60px;
+  padding: 60px 40px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -16,11 +17,6 @@
     justify-content: center;
     gap: 10px;
     margin-top: 30px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .testimonials_container {
-    display: none;
+    flex-wrap: wrap;
   }
 }

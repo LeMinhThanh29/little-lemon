@@ -3,14 +3,6 @@ import styles from "./scss/About.module.scss";
 import classNames from "classnames/bind";
 import { restaurant_about } from "../../../assets/image";
 import Button from "../../Button/Button";
-import {
-  service_shipper,
-  service_room,
-  service_wedding,
-  service_reserved,
-  service_food,
-  service_loyalty,
-} from "../../../assets/icons";
 import Service from "../../Service/Service";
 import { serviceData } from "../../../model/ServiceModel";
 const cx = classNames.bind(styles);

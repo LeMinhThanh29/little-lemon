@@ -4,7 +4,8 @@
   max-width: 1440px;
   margin: auto;
   padding-top: 50px;
-  padding: 50px 20px 0px 20px;
+  padding: 50px 5px 0px 5px;
+  box-sizing: border-box;
   transition: all 1s ease;
   article:not(:nth-of-type(1)) {
     margin-top: 50px;
@@ -30,7 +31,6 @@
 @media screen and (max-width: $container-xs) {
   .highlights_section_container {
     max-width: 400px !important;
-    padding: 50px 0px 0px 0px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -41,6 +41,6 @@
 
 @media screen and (max-width: 400px) {
   .highlights_section_container {
-    max-width: 320px !important;
+    max-width: 340px !important;
   }
 }

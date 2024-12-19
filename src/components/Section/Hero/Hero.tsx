@@ -11,23 +11,25 @@ import { restaurantData } from "../../../model/RestaurantCardModel";
 import SliderBar from "../../Slider/Slider";
 import RestaurantCard from "../../RestaurantCard/RestaurantCard";
 const cx = classNames.bind(styles);
-const CARD_WIDTH: number = 230;
 const Hero = () => {
   const refWidth = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState<number>(0);
-
+  const resize = () => {
+    if (refWidth.current) {
+      setContainerWidth(refWidth.current.clientWidth);
+    }
+  };
+  
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (refWidth.current) {
-        setContainerWidth(refWidth.current.clientWidth);
-      }
-    });
-    return window.removeEventListener("resize", () => {
-      if (refWidth.current) {
-        setContainerWidth(refWidth.current.clientWidth);
-      }
-    });
-  }, []);
+    resize(); // Gọi resize lần đầu để thiết lập kích thước ngay khi component mount
+    window.addEventListener("resize", resize);
+  
+    // Cleanup listener khi component unmount
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []); // Dependency là mảng rỗng, chạy 1 lần khi component mount
+  
 
   return (
     <section className={cx("hero_section_container")}>
@@ -56,7 +58,6 @@ const Hero = () => {
               <div>
                 <SliderBar
                   title="Little Lemon's Branches"
-                  CARD_WIDTH={CARD_WIDTH}
                   CONTAINER_WIDTH={containerWidth}
                   ITEMS={restaurantData}
                 >

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import withSlider, { SliderProps } from "./withSlider";
 import classNames from "classnames/bind";
 import styles from "./scss/Slider.module.scss";
@@ -8,6 +8,7 @@ const Slider = <T,>({
   ITEMS,
   action,
   listRef,
+  childRef,
   children,
   title,
 }: SliderProps<T>) => {
@@ -28,7 +29,10 @@ const Slider = <T,>({
         <div className={cx("slider_list_row")} ref={listRef}>
           {ITEMS.map((value, index) => {
             const ChildComponent = children; // Gán children vào một biến
-            return <ChildComponent {...value} key={index} />;
+            return React.cloneElement(
+              <ChildComponent {...value} key={index} />,
+              { ref: childRef } // Truyền ref vào mỗi phần tử con
+            );
           })}
         </div>
       </div>

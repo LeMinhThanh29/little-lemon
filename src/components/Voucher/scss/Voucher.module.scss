@@ -1,8 +1,10 @@
+@import "../../../assets/styles/global.scss";
+
 .voucher_card_container {
-  width: 500px;
+  max-width: 500px;
   position: relative;
   .voucher_card_row {
-    height: 173px;
+    height: 100%;
     background-color: #fefbe8;
     display: flex;
     align-items: center;
@@ -81,7 +83,6 @@
           background-position-x: right;
           background-position-y: bottom;
           background-color: #dedede;
-         
         }
         .voucher_card_right_ticket_header {
           h1 {
@@ -89,7 +90,6 @@
             color: #d1ae00;
             padding: 0px;
             margin: 0px;
-           
           }
           p {
             font-size: 0.7rem;
@@ -136,7 +136,7 @@
       .voucher_card_ticket_claims {
         flex: 1;
         cursor: pointer;
-        background-color: #27A26D;
+        background-color: #27a26d;
         height: 100%;
         border-left: 2px dashed white;
         display: flex;
@@ -164,6 +164,54 @@
       height: 22px;
       border-radius: 50%;
       background-color: white;
+    }
+  }
+}
+
+
+@media screen and (max-width: $container-md) {
+  .voucher_card_container {
+    .voucher_card_row {
+      .voucher_card_left {
+        max-width: 90px;
+        .voucher_card_ticket {
+        }
+        .voucher_card_box_ticket_icon {
+          width: 45%;
+          height: 30%;
+          img {
+            max-width: 25px;
+          }
+        }
+      }
+      .voucher_card_right {
+        .voucher_card_right_body {
+          max-width: 200px;
+          .voucher_card_right_ticket_header {
+            h1 {
+              font-size: 1rem;
+            }
+            p {
+              font-size: 0.7rem;
+            }
+          }
+          .voucher_card_right_ticket_body {
+            h1 {
+              font-size: 1.8rem;
+              line-height: unset;
+            }
+          }
+          .voucher_card_right_ticket_footer {
+            .voucher_card_right_ticket_voucherTerms {
+              max-width: 100%;
+            }
+          }
+        }
+        .voucher_card_ticket_claims {
+        }
+      }
+    }
+    .voucher_card_box_container {
     }
   }
 }

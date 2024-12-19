@@ -1,3 +1,4 @@
+@import "../../../assets/styles/global.scss";
 .service_box {
   cursor: pointer;
   display: flex;
@@ -24,5 +25,14 @@
     font-weight: bold;
     color: #2c5c4b;
     margin: auto;
+  }
+}
+@media screen and (max-width: $container-sm) {
+  .service_box {
+    .service_box_icon {
+    }
+    p {
+      font-size: 0.8rem;
+    }
   }
 }

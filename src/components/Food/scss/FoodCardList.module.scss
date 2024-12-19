@@ -1,6 +1,5 @@
 @import "../../../assets/styles/global.scss";
 
-
 .food_card_list_container {
   margin-top: 50px;
   .food_card_list_row {
@@ -9,9 +8,10 @@
     .food_card_list_grid {
       margin-top: 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       grid-template-rows: auto;
-      gap: 30px;
+      row-gap: 10px;
+      column-gap: 30px;
       place-items: center;
     }
     .food_card_list_action {
@@ -23,3 +23,13 @@
   }
 }
 
+@media screen and (max-width: 850px) and (max-width: 400px) {
+  .food_card_list_container {
+    .food_card_list_row {
+      .food_card_list_grid {
+        padding: 0px 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
