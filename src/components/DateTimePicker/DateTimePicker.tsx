@@ -25,7 +25,7 @@ const DateTimePicker = (props: DateTimeProps) => {
     <>
       <label
         className={cx("placeholder")}
-        htmlFor="date"
+        htmlFor={id}
         onClick={(e) => handleLabelClick(e)}
       >
         <img src={icon} alt="" />
