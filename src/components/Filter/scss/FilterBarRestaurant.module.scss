@@ -20,9 +20,8 @@
       input[type="date"],
       input[type="time"] {
         &:nth-of-type(-n + 2) {
-          width: 100px;
+          width: 100%;
           position: absolute;
-          
           visibility: hidden;
         }
       }
