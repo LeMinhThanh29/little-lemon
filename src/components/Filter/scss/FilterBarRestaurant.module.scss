@@ -11,11 +11,10 @@
   align-items: center;
   .filterBar_items {
     cursor: pointer;
-    flex: 2;
     position: relative;
     display: flex;
     align-items: center;
-
+    height: 100%;
     &:nth-of-type(-n + 2) {
       input[type="date"],
       input[type="time"] {
@@ -68,7 +67,7 @@
     }
     .filterBar_items_button {
       padding: 15px;
-      flex: unset;
+      flex: 1;
       p {
         display: none;
       }
