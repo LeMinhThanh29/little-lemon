@@ -20,9 +20,10 @@
       input[type="date"],
       input[type="time"] {
         &:nth-of-type(-n + 2) {
-          width: 100%;
-          position: absolute;
-          visibility: hidden;
+          flex: 1;
+
+      
+          background-color: red;
         }
       }
     }
