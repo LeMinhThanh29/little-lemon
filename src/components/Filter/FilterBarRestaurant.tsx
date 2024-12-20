@@ -30,6 +30,7 @@ const FilterBarRestaurant = () => {
           name="date"
         />
       </div>
+      <br />
       <div className={cx("filterBar_items")}>
         <DateTimePicker
           icon={time}

@@ -2,18 +2,18 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px 10px;
   box-sizing: border-box;
   font-size: 1rem;
   flex: 1;
   height: 100%;
+  padding-left: 20px;
   &:hover {
     color: #2c5c4b;
   }
 }
 @media screen and (max-width: 800px) {
   .placeholder {
-    padding-left: 10px;
+    padding-left: unset;
     justify-content: center;
     p {
       font-size: 0.9rem;
