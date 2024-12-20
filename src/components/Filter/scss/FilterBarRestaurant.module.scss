@@ -11,16 +11,19 @@
   align-items: center;
   .filterBar_items {
     cursor: pointer;
+    flex: 2;
     position: relative;
     display: flex;
     align-items: center;
-    height: 100%;
+
     &:nth-of-type(-n + 2) {
       input[type="date"],
       input[type="time"] {
         &:nth-of-type(-n + 2) {
-          opacity: 0;
-          width: 0px;
+          width: 100px;
+          position: absolute;
+          
+          visibility: hidden;
         }
       }
     }
@@ -67,7 +70,7 @@
     }
     .filterBar_items_button {
       padding: 15px;
-      flex: 1;
+      flex: unset;
       p {
         display: none;
       }
