@@ -26,7 +26,7 @@ const Revertation = () => {
     context?.dispatch({ type: "CHOOSE", payload: table });
   };
   console.log(context?.initState.invoice);
-  
+
   return (
     <div className={cx("revertation_container")}>
       <div className={cx("revertation_row")}>
@@ -82,36 +82,30 @@ const Revertation = () => {
             </div>
           </div>
           <div className={cx("revertation_right")}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
-            nobis, illum similique, soluta possimus quibusdam ab, corporis
-            distinctio dolorem commodi omnis at id labore maxime ad dignissimos
-            laborum mollitia ipsa! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Itaque nobis, illum similique, soluta possimus
-            quibusdam ab, corporis distinctio dolorem commodi omnis at id labore
-            maxime ad dignissimos laborum mollitia ipsa! Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Itaque nobis, illum similique,
-            soluta possimus quibusdam ab, corporis distinctio dolorem commodi
-            omnis at id labore maxime ad dignissimos laborum mollitia ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
-            nobis, illum similique, soluta possimus quibusdam ab, corporis
-            distinctio dolorem commodi omnis at id labore maxime ad dignissimos
-            laborum mollitia ipsa!
-
-            \
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
-            nobis, illum similique, soluta possimus quibusdam ab, corporis
-            distinctio dolorem commodi omnis at id labore maxime ad dignissimos
-            laborum mollitia ipsa! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Itaque nobis, illum similique, soluta possimus
-            quibusdam ab, corporis distinctio dolorem commodi omnis at id labore
-            maxime ad dignissimos laborum mollitia ipsa! Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Itaque nobis, illum similique,
-            soluta possimus quibusdam ab, corporis distinctio dolorem commodi
-            omnis at id labore maxime ad dignissimos laborum mollitia ipsa!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
-            nobis, illum similique, soluta possimus quibusdam ab, corporis
-            distinctio dolorem commodi omnis at id labore maxime ad dignissimos
-            laborum mollitia ipsa!
+            <section aria-label="Table Information">
+              <h2>Table Details</h2>
+              <ul>
+                {context?.initState.invoice.tables.map((table, index) => (
+                  <li key={index}>
+                    <article>
+                      <p>
+                        <strong>ID:</strong> {table.table_id}
+                      </p>
+                      <p>
+                        <strong>Table Number:</strong> {table.table_number}
+                      </p>
+                      <p>
+                        <strong>Status:</strong> {table.table_status}
+                      </p>
+                      <p>
+                        <strong>Type:</strong>{" "}
+                        {table.table_type?.type_name || "N/A"}
+                      </p>
+                    </article>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
         </div>
       </div>

@@ -28,15 +28,25 @@ export const reducer = (state: InitialState, action: TYPE_ACTION) => {
             }
           : table
       );
-      const invoiceAdd = state.invoice.tables.filter(
-        (value) => value.table_status === "SELECTED"
+      let invoiceData = [...state.invoice.tables];
+      const invoiceItem = state.invoice.tables.find(
+        (value) => value.table_id === action.payload.table_id
       );
-      const new_invoiceAdd = [...invoiceAdd, action.payload];
+
+      if (!invoiceItem) {
+        // Nếu chưa có, thêm vào `invoice.tables`
+        invoiceData = [...invoiceData, action.payload];
+      } else {
+        // Nếu đã tồn tại, loại bỏ bàn khỏi `invoice.tables`
+        invoiceData = invoiceData.filter(
+          (value) => value.table_id !== action.payload.table_id
+        );
+      }
 
       return {
         ...state,
         table: tableChoose,
-        invoice: { ...state.invoice, tables: new_invoiceAdd },
+        invoice: { ...state.invoice, tables: invoiceData },
       };
 
     default:
