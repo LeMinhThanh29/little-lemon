@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import DefaultLayout from "../layouts/Default/DefaultLayout";
 import { Outlet } from "react-router-dom";
 import AuthenLayout from "../layouts/Auth/AuthenLayout";
+import Revertation from "../pages/Revertation/Revertation";
 type TypeLayout = { type: "DEFAULT" } | { type: "AUTH" } | undefined;
 export interface Router {
   name: string;
@@ -39,6 +40,12 @@ export const routers: Router[] = [
     name: "Order Online",
     path: "/order_online",
     element: <OrderOnline />,
+    layout: { type: "DEFAULT" },
+  },
+  {
+    name: "Revertation",
+    path: "/revertation",
+    element: <Revertation />,
     layout: { type: "DEFAULT" },
   },
   {

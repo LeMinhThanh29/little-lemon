@@ -5,8 +5,6 @@ import {
   logo,
   cart,
   dropdown,
-  hamburger_menu,
-  cancel_X,
 } from "../../assets/icons";
 import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
@@ -80,7 +78,9 @@ const Nav = () => {
         <div className={cx("cicle")}>
           <img src={cart} alt="" />
         </div>
-        <Button>Revertation</Button>
+        <Button>
+          <NavLink to="/revertation">Revertation</NavLink>
+        </Button>
       </div>
     </nav>
   );

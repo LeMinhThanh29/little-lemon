@@ -38,7 +38,19 @@ import service_reserved from "./icon/reserved_2702515.png";
 import service_food from "./icon/food_5977158.png";
 import service_loyalty from "./icon/loyalty-program_17388318.png";
 import cancel_X from "./icon/x.png";
+import MINI from "./icon/two_9983270.png";
+import MEDIUM from "./icon/medium.png";
+import LARGE from "./icon/large.png";
+import VIP from "./icon/vip.png";
+import Checkout from "./icon/absence_10076111.png";
+import door from "./icon/knob_16437574.png";
 export {
+  door,
+  Checkout,
+  MINI,
+  MEDIUM,
+  LARGE,
+  VIP,
   cancel_X,
   service_shipper,
   service_room,
