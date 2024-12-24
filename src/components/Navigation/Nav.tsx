@@ -1,11 +1,7 @@
 import classNames from "classnames/bind";
 import React, { useState } from "react";
 import styles from "./scss/Nav.module.scss";
-import {
-  logo,
-  cart,
-  dropdown,
-} from "../../assets/icons";
+import { logo, cart, dropdown } from "../../assets/icons";
 import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import { routers } from "../../routers/Router";
@@ -32,7 +28,11 @@ const Nav = () => {
             </NavLink>
           </li>
           {routers
-            .filter((defaultFilter) => defaultFilter.layout?.type === "DEFAULT")
+            .filter(
+              (defaultFilter) =>
+                defaultFilter.layout?.type === "DEFAULT" &&
+                defaultFilter.status === true
+            )
             .map((value, index) => (
               <li key={index}>
                 <NavLink
@@ -79,7 +79,7 @@ const Nav = () => {
           <img src={cart} alt="" />
         </div>
         <Button>
-          <NavLink to="/revertation">Revertation</NavLink>
+          <NavLink to="/reservation">Reservation</NavLink>
         </Button>
       </div>
     </nav>

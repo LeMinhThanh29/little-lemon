@@ -1,7 +1,14 @@
 import React from "react";
 import { dataTable, TableModel } from "../model/TableModel";
-import { invoice, InvoiceModel } from "../model/InvoiceModel";
-export type TYPE_ACTION = { type: "CHOOSE"; payload: TableModel };
+import {
+  invoiceDataDetail,
+  InvoiceDetailModel,
+  invoiceTable,
+  InvoiceTableModel,
+} from "../model/InvoiceModel";
+export type TYPE_ACTION =
+  | { type: "CHOOSE"; payload: TableModel }
+  | { type: "RESERVE"; payload: InvoiceDetailModel };
 export interface ContextModel {
   initState: InitialState;
   dispatch: React.Dispatch<TYPE_ACTION>;
@@ -9,11 +16,13 @@ export interface ContextModel {
 
 export interface InitialState {
   table: TableModel[];
-  invoice: InvoiceModel;
+  invoice: InvoiceTableModel;
+  invoiceDetail: InvoiceDetailModel;
 }
 export const initStateData: InitialState = {
   table: dataTable,
-  invoice: invoice,
+  invoice: invoiceTable,
+  invoiceDetail: invoiceDataDetail,
 };
 
 export const reducer = (state: InitialState, action: TYPE_ACTION) => {
@@ -48,6 +57,9 @@ export const reducer = (state: InitialState, action: TYPE_ACTION) => {
         table: tableChoose,
         invoice: { ...state.invoice, tables: invoiceData },
       };
+
+    case "RESERVE":
+      return { ...state, invoiceDetail: action.payload };
 
     default:
       return state;

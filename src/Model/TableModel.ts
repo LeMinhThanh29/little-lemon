@@ -1,6 +1,6 @@
 export type TableType = "MINI"|"MEDIUM" | "LARGE" | "VIP" ;
 
-type TableStatus = "AVAILABLE" | "SELECTED" | "RESERVED";
+export type TableStatus = "AVAILABLE" | "SELECTED" | "RESERVED";
 export interface TableModel {
   table_id: string;
   table_number: string;

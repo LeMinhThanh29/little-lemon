@@ -4,6 +4,7 @@ import Heading from "./components/Header/Heading";
 import { Route, Routes } from "react-router-dom";
 import { routers, Layout } from "./routers/Router";
 import AppContext from "./context/AppContext";
+import Checkout from "./pages/Checkout/Checkout";
 
 const App = () => {
   return (

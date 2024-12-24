@@ -17,6 +17,11 @@ ul {
 
 a {
   text-decoration: none;
+  color: #2C5C4B;
+}
+
+img {
+  object-fit: cover;
 }
 
 main {

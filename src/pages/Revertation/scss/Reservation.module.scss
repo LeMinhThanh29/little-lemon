@@ -1,0 +1,331 @@
+.reservation_container {
+  .reservation_row {
+    .reservation_banner {
+      height: 400px;
+    }
+    .reservation_body {
+      max-width: 1500px;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      margin: 50px 0px;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      .reservation_left {
+        flex: 2;
+        height: 100%;
+        text-align: center;
+        border: 1px solid gainsboro;
+        padding: 20px 0px;
+        border-radius: 5px;
+        p {
+          font-weight: bold;
+        }
+        .reservation_left_map {
+          box-sizing: border-box;
+
+          display: flex;
+          padding: 10px;
+          .reservation_left_map_orther {
+            border-right: 2px dashed gray;
+            padding: 20px;
+            img {
+              max-width: 30px;
+            }
+            .reservation_left_map_checkout {
+              margin-top: 20px;
+            }
+          }
+          .reservation_left_map_layout {
+            width: 100%;
+            .reservation_left_map_group {
+              text-align: center;
+              &:not(:nth-of-type(1)) {
+                margin-top: 20px;
+              }
+              .reservation_left_map_group_items {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                .reservation_left_items {
+                  cursor: pointer;
+                  img {
+                    width: 100%;
+                    max-width: 65px;
+                    filter: invert(78%) brightness(100%) saturate(5000%)
+                      hue-rotate(180deg);
+
+                    &.SELECTED {
+                      filter: brightness(0) saturate(100%) invert(22%)
+                        sepia(99%) saturate(800%) hue-rotate(140deg)
+                        brightness(85%) contrast(85%);
+                    }
+                    &.RESERVED {
+                      filter: brightness(0) saturate(100%) invert(15%)
+                        sepia(100%) saturate(5000%) hue-rotate(0deg)
+                        brightness(90%) contrast(85%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .reservation_left_map_details {
+          padding-top: 10px;
+          border-top: 1px solid rgb(201, 201, 201);
+          .reservation_left_map_details_list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            li {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              &:nth-of-type(1) {
+                img {
+                  filter: invert(78%) brightness(100%) saturate(5000%)
+                    hue-rotate(180deg);
+                }
+              }
+              &:nth-of-type(2) {
+                img {
+                  filter: brightness(0) saturate(100%) invert(22%) sepia(99%)
+                    saturate(800%) hue-rotate(140deg) brightness(85%)
+                    contrast(85%);
+                }
+              }
+              &:nth-of-type(3) {
+                img {
+                  filter: brightness(0) saturate(100%) invert(15%) sepia(100%)
+                    saturate(5000%) hue-rotate(0deg) brightness(90%)
+                    contrast(85%);
+                }
+              }
+              p {
+                font-size: 0.8rem;
+              }
+              img {
+                max-width: 30px;
+              }
+            }
+          }
+        }
+      }
+      .reservation_right {
+        flex: 1;
+        height: auto;
+        padding: 20px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        .reservation_invioce {
+          height: 100%;
+          .reservation_invioce_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .reservation_invioce_header_branch {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              span {
+                font-size: 0.9rem;
+                border-radius: 2px;
+                font-weight: bold;
+              }
+              a {
+                font-size: 0.8rem;
+              }
+            }
+          }
+          .reservation_invoice_date_time {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            span {
+              font-size: 0.8rem;
+              color: gray;
+            }
+            .reservation_invoice_date_select,
+            .reservation_invoice_time_select {
+              label {
+                cursor: pointer;
+              }
+              input {
+                width: 0px;
+                visibility: hidden;
+              }
+            }
+            .reservation_invoice_date {
+              text-align: left;
+            }
+            .reservation_invoice_time {
+              text-align: right;
+            }
+          }
+          .reservation_invoice_seats {
+            margin-top: 20px;
+            .reservation_invoice_table_choose {
+              position: relative;
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-between;
+              .reservation_invoice_table_breakpoint {
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-wrap: nowrap;
+                background-color: #eac5c9;
+                color: #ff4b2b;
+                font-size: 0.7rem;
+                padding: 5px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                font-weight: bold;
+              }
+            }
+            .reservation_invoice_table_choose_items {
+              min-height: 70px;
+              .reservation_invoice_table_choose_items_list {
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 5px;
+
+                li {
+                  &:not(.default_no_selected) {
+                    font-weight: bold;
+                    padding: 7px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                  }
+                }
+                .reservation_invoice_table_choose_items_list_items_MINI {
+                  background-color: #11998e;
+                  color: white;
+                }
+                .reservation_invoice_table_choose_items_list_items_MEDIUM {
+                  background-color: #cac531;
+                  color: white;
+                }
+                .reservation_invoice_table_choose_items_list_items_LARGE {
+                  background-color: #f5af19;
+                  color: white;
+                }
+                .reservation_invoice_table_choose_items_list_items_VIP {
+                  background-color: #c31432;
+                  color: white;
+                }
+              }
+            }
+          }
+          .reversation_fare_details {
+            margin-top: 20px;
+            .reversation_fare_details_body {
+              margin: 5px 0px;
+              padding: 10px;
+              background-color: rgb(240, 237, 237);
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              border-left: 2px dashed gray;
+              font-weight: 500;
+              span {
+                font-size: 0.9rem;
+              }
+              .reversation_fare_details_list {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                li {
+                  padding: 5px;
+                  font-size: 0.8rem;
+                  border-radius: 3px;
+                  &:nth-of-type(1) {
+                    background-color: #11998e;
+                    color: white;
+                  }
+                  &:nth-of-type(2) {
+                    background-color: #cac531;
+                    color: white;
+                  }
+                  &:nth-of-type(3) {
+                    background-color: #f5af19;
+                    color: white;
+                  }
+                  &:nth-of-type(4) {
+                    background-color: #c31432;
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+          .reservation_invoice_total {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+              font-size: 1rem;
+              font-weight: bold;
+            }
+            .reservation_invoice_total_title {
+              span {
+                font-size: 0.8rem;
+                color: rgb(175, 175, 175);
+              }
+            }
+          }
+          .reservation_invoice_action {
+            margin-top: 20px;
+            button {
+              width: 100%;
+              border-radius: 5px;
+            }
+            span {
+              font-size: 0.8rem;
+              color: rgb(175, 175, 175);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .reservation_container {
+    .reservation_row {
+      .reservation_banner {
+        height: 300px;
+      }
+      .reservation_body {
+        flex-direction: column;
+        align-items: unset;
+        gap: 10px;
+        .reservation_left {
+          .reservation_left_map {
+            padding: unset;
+          }
+        }
+        .reservation_right {
+          .reservation_invioce {
+            .reservation_invoice_date_time {
+              .reservation_invoice_date_select,
+              .reservation_invoice_time_select {
+                max-width: 150px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ const FilterBar = () => {
             })}
             onClick={() => handleStatusClick(false)}
           >
-            Revertation
+            Reservation
           </div>
           <div
             className={cx("filterBar_header_items", {
