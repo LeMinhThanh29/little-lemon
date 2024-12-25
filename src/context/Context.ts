@@ -1,14 +1,17 @@
 import React from "react";
 import { dataTable, TableModel } from "../model/TableModel";
 import {
+  defaultInvoiceModel,
   invoiceDataDetail,
   InvoiceDetailModel,
+  InvoiceModel,
   invoiceTable,
   InvoiceTableModel,
 } from "../model/InvoiceModel";
 export type TYPE_ACTION =
   | { type: "CHOOSE"; payload: TableModel }
-  | { type: "RESERVE"; payload: InvoiceDetailModel };
+  | { type: "RESERVE"; payload: InvoiceDetailModel }
+  | { type: "CHECKOUT"; payload: InvoiceModel };
 export interface ContextModel {
   initState: InitialState;
   dispatch: React.Dispatch<TYPE_ACTION>;
@@ -18,11 +21,13 @@ export interface InitialState {
   table: TableModel[];
   invoice: InvoiceTableModel;
   invoiceDetail: InvoiceDetailModel;
+  checkout: InvoiceModel;
 }
 export const initStateData: InitialState = {
   table: dataTable,
   invoice: invoiceTable,
   invoiceDetail: invoiceDataDetail,
+  checkout: defaultInvoiceModel,
 };
 
 export const reducer = (state: InitialState, action: TYPE_ACTION) => {
@@ -59,7 +64,13 @@ export const reducer = (state: InitialState, action: TYPE_ACTION) => {
       };
 
     case "RESERVE":
+      localStorage.setItem(
+        action.payload.invoiceDetailId,
+        JSON.stringify(action.payload)
+      );
       return { ...state, invoiceDetail: action.payload };
+    case "CHECKOUT":
+      return { ...state, checkout: action.payload };
 
     default:
       return state;

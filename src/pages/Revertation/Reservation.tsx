@@ -9,11 +9,7 @@ import { MINI, MEDIUM, LARGE, VIP, Checkout, door } from "../../assets/icons";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { formattedDate } from "../../utils/DateFormatter";
-import About from "../../components/Section/About/About";
-import {
-  InvoiceDetailModel,
-  InvoiceTableModel,
-} from "../../model/InvoiceModel";
+import { InvoiceDetailModel } from "../../model/InvoiceModel";
 
 const cx = classNames.bind(styles);
 

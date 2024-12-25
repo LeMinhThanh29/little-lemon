@@ -197,30 +197,38 @@
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 5px;
-
+                p {
+                  font-size: 0.8rem;
+                }
                 li {
                   &:not(.default_no_selected) {
-                    font-weight: bold;
-                    padding: 7px;
-                    border-radius: 5px;
+                    font-weight: bolder;
+                    font-size: small;
+                    padding: 3px 7px;
+                    border-radius: 26px;
+                    background-color: rgb(255, 255, 255);
+                    overflow: hidden;
                     cursor: pointer;
                   }
                 }
                 .reservation_invoice_table_choose_items_list_items_MINI {
-                  background-color: #11998e;
-                  color: white;
+                  border: 2px solid #11998e;
+                  color: #11998e;
                 }
+
                 .reservation_invoice_table_choose_items_list_items_MEDIUM {
-                  background-color: #cac531;
-                  color: white;
+                  border: 2px solid #e19a58;
+                  color: #e19a58;
                 }
+
                 .reservation_invoice_table_choose_items_list_items_LARGE {
-                  background-color: #f5af19;
-                  color: white;
+                  border: 2px solid #f5af19;
+                  color: #f5af19;
                 }
+
                 .reservation_invoice_table_choose_items_list_items_VIP {
-                  background-color: #c31432;
-                  color: white;
+                  border: 2px solid #c31432;
+                  color: #c31432;
                 }
               }
             }
@@ -252,7 +260,7 @@
                     color: white;
                   }
                   &:nth-of-type(2) {
-                    background-color: #cac531;
+                    background-color: #e19a58;
                     color: white;
                   }
                   &:nth-of-type(3) {
