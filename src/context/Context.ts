@@ -70,9 +70,30 @@ export const reducer = (state: InitialState, action: TYPE_ACTION) => {
       );
       return { ...state, invoiceDetail: action.payload };
     case "CHECKOUT":
-      return { ...state, checkout: action.payload };
+      const dataContext = [...state.table];
+      const table = action.payload.invoiceDetail.list_table.tables;
+      console.log(state.invoiceDetail);
+
+      return {
+        ...state,
+        checkout: action.payload,
+        invoiceDetail: invoiceDataDetail,
+        invoice: invoiceTable,
+        table: updateTable(dataContext, table),
+      };
 
     default:
       return state;
   }
+};
+
+const updateTable = (dataContext: TableModel[], table: TableModel[]) => {
+  for (let tableOrigin = 0; tableOrigin < dataContext.length; tableOrigin++) {
+    for (let tableTrue = 0; tableTrue < table.length; tableTrue++) {
+      if (dataContext[tableOrigin].table_id === table[tableTrue].table_id) {
+        dataContext[tableOrigin].table_status = "AVAILABLE";
+      }
+    }
+  }
+  return dataContext;
 };

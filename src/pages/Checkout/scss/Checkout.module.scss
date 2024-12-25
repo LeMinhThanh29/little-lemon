@@ -19,24 +19,47 @@
           padding: 10px;
           text-align: center;
         }
+        transition: all 0.4s ease;
       }
       .checkout_aside {
         padding: 17px;
         flex: 2;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
         height: 100%;
+        border: 2px dashed gainsboro;
+        border-radius: 10px;
+        transition: all 0.4s ease;
+        &:hover {
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
         .checkout_container {
           .checkout_container_header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            span {
-              font-size: 0.9rem;
-              border-radius: 2px;
-              font-weight: bold;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid gainsboro;
+            .checkout_container_header_restaurant_infor {
+              span {
+                font-size: 0.8rem;
+                color: gray;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                img {
+                  max-width: 12px;
+                }
+              }
             }
-            a {
-              font-size: 0.8rem;
+            .checkout_container_header_restaurant {
+              width: 50px;
+              height: 50px;
+              overflow: hidden;
+              border-radius: 50%;
+              img {
+                object-fit: cover;
+                height: 100%;
+              }
             }
           }
           .checkout_container_date_time {
@@ -44,6 +67,8 @@
             align-items: center;
             justify-content: space-between;
             margin-top: 10px;
+            border-bottom: 1px solid gainsboro;
+            padding-bottom: 10px;
             span {
               font-size: 0.8rem;
               color: gray;
@@ -78,7 +103,6 @@
               }
             }
             .checkout_container_table_choose_items {
-              min-height: 70px;
               .checkout_container_table_choose_items_list {
                 margin-top: 10px;
                 display: flex;
@@ -164,7 +188,7 @@
             justify-content: space-between;
             align-items: center;
             p {
-              font-size: 1rem;
+              font-size: 1.5rem;
               font-weight: bold;
             }
             .checkout_container_total_title {
@@ -184,6 +208,30 @@
               font-size: 0.8rem;
               color: rgb(175, 175, 175);
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .checkout_container {
+    .checkout_row {
+      .checkout_banner {
+        height: 400px;
+      }
+      .checkout_body {
+        flex-direction: column-reverse;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        gap: 20px;
+        .checkout_article {
+          
+        }
+        .checkout_aside {
+        
+          .checkout_container {
           }
         }
       }

@@ -24,6 +24,7 @@
       text-align: center;
       color: white;
       max-width: 1000px;
+      transition: all 1s ease;
       .banner_header {
         font-size: 4rem;
         font-weight: bold;
@@ -51,9 +52,10 @@
   .banner_container {
     .banner_row {
       .banner_content {
+        max-width: 400px;
         .banner_header {
           font-size: 2.5rem;
-        }
+      }
       }
     }
   }

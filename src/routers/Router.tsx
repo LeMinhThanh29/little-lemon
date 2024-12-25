@@ -10,6 +10,8 @@ import { Outlet } from "react-router-dom";
 import AuthenLayout from "../layouts/Auth/AuthenLayout";
 import Reservation from "../pages/Revertation/Reservation";
 import Checkout from "../pages/Checkout/Checkout";
+import Congratulation from "../pages/Congratulations/Congratulation";
+
 type TypeLayout = { type: "DEFAULT" } | { type: "AUTH" } | undefined;
 export interface Router {
   name: string;
@@ -59,6 +61,13 @@ export const routers: Router[] = [
     name: "Checkout",
     path: "/checkout/:invoiceDetailId",
     element: <Checkout />,
+    layout: { type: "DEFAULT" },
+    status: false,
+  },
+  {
+    name: "Congratulations",
+    path: "/congratulations",
+    element: <Congratulation />,
     layout: { type: "DEFAULT" },
     status: false,
   },

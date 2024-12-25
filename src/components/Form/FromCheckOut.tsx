@@ -50,7 +50,7 @@ const FromCheckOut = (props: FromCheckOutProps) => {
             maxLength: {
               value: 11,
               message: "Phone number must be at most 11 digits",
-            }
+            },
           })}
         />
         {errors.phone && <span>{errors.phone.message}</span>}
@@ -97,14 +97,14 @@ const FromCheckOut = (props: FromCheckOutProps) => {
         <label htmlFor="note">Note:</label>
         <textarea
           id="note"
-            placeholder="Please enter Note"
+          placeholder="Please enter Note"
           className={cx({ "input-error": errors.note })}
           {...register("note")}
           aria-describedby="note-description"
         />
         <p id="note-description">Please provide any additional notes.</p>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Reservation</button>
     </>
   );
 };

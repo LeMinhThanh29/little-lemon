@@ -1,0 +1,50 @@
+.congratulations_section_container {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  padding-bottom: 50px;
+  .congratulations_aritcle_container {
+    .congratulations_aritcle_container_header {
+      img {
+        width: 100%;
+      }
+    }
+    .congratulations_aritcle_container_title {
+      text-align: center;
+      font-size: 2rem;
+
+      img {
+        margin: 20px 0px;
+      }
+    }
+    .congratulations_aritcle_container_message {
+      max-width: 650px;
+      padding: 0px 20px;
+      p {
+        margin-bottom: 20px;
+      }
+    }
+    height: auto;
+    flex: 1;
+  }
+  .congratulations_aside_container {
+    background-color: blue;
+    height: 100%;
+    flex: 1;
+    width: 100%;
+    max-width: 570px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .congratulations_section_container {
+    flex-direction: column;
+
+    .congratulations_aritcle_container {
+    }
+    .congratulations_aside_container {
+    }
+  }
+}

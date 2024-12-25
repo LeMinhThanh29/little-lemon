@@ -44,7 +44,9 @@ import LARGE from "./icon/large.png";
 import VIP from "./icon/vip.png";
 import Checkout from "./icon/absence_10076111.png";
 import door from "./icon/knob_16437574.png";
+import location from "./icon/location_535239.png";
 export {
+  location,
   door,
   Checkout,
   MINI,

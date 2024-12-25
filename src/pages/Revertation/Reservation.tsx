@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { formattedDate } from "../../utils/DateFormatter";
 import { InvoiceDetailModel } from "../../model/InvoiceModel";
+import { errorAlert } from "../../hook/useAlert";
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +31,11 @@ const Reservation = () => {
   };
   const handleCheck = (table: TableModel) => {
     if (table.table_status === "RESERVED") {
-      alert("Table is RESERVED");
+      errorAlert({
+        title: "Table Reservation Unavailable",
+        text: "The selected table is currently reserved. Please choose another table or try again later. We apologize for the inconvenience.",
+        icon: "error",
+      });
       return;
     }
     context?.dispatch({ type: "CHOOSE", payload: table });
@@ -84,8 +89,20 @@ const Reservation = () => {
     if (!context) {
       return;
     }
+    if (context.initState.invoice.tables.length < 1) {
+      errorAlert({
+        title: "No Table Selected",
+        text: "Please select at least one table to proceed.",
+        icon: "warning",
+      });
+      return;
+    }
     if (!dateState || !timeState) {
-      alert("Please select a date and time.");
+      errorAlert({
+        title: "Date and Time Required",
+        text: "Please select both a date and a time to proceed.",
+        icon: "warning",
+      });
       return;
     }
     const list: TableModel[] = context.initState.invoice.tables;

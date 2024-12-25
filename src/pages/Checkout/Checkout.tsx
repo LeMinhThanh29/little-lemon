@@ -12,6 +12,9 @@ import { restaurant_reservation } from "../../assets/image";
 import UserFormWithHOC from "../../components/Form/FromCheckOut";
 import { useContextApi } from "../../context/AppContext";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { confirm } from "../../hook/useAlert";
+import { location } from "../../assets/icons";
 const cx = classNames.bind(styles);
 const Checkout = () => {
   const context = useContextApi();
@@ -19,6 +22,7 @@ const Checkout = () => {
   const [invoiceData, setInvoiceData] = useState<InvoiceDetailModel | null>(
     null
   );
+
   const generateId = () => {
     const randomPart = Math.random().toString(36).substr(2, 6).toUpperCase();
     const datePart = new Date().toISOString().slice(0, 10).replace(/-/g, ""); // YYYYMMDD
@@ -29,7 +33,6 @@ const Checkout = () => {
       return;
     }
     const { email, fullname, note, occasion, phone } = data;
-    console.log("Form submitted:", data);
 
     const dataSubmit: InvoiceModel = {
       email: email,
@@ -41,8 +44,21 @@ const Checkout = () => {
       invoiceDetail: invoiceData ?? invoiceDataDetail,
     };
 
-    context.dispatch({ type: "CHECKOUT", payload: dataSubmit });
-    localStorage.removeItem(`${invoiceDetailId}`);
+    confirm({
+      icon: "question",
+      text: "Are you sure you want to confirm this reservation?",
+      title: "Confirm Reservation",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "Confirmed!",
+          "Your reservation has been confirmed.",
+          "success"
+        );
+        context.dispatch({ type: "CHECKOUT", payload: dataSubmit });
+        localStorage.removeItem(`${invoiceDetailId}`);
+      }
+    });
   };
 
   useEffect(() => {
@@ -53,14 +69,12 @@ const Checkout = () => {
         setInvoiceData(JSON.parse(storedData));
       }
     }
-  }, []);
-  console.log(context?.initState.checkout);
+  }, [invoiceDetailId]);
 
   return (
     <section className={cx("checkout_container")}>
       <div className={cx("checkout_row")}>
         <div className={cx("checkout_banner")}>
-         
           <Banner
             banner_background={restaurant_reservation}
             banner_description="Review your order details, including items, quantities, and prices. Choose your preferred shipping method, provide delivery information, and select a secure payment option. Don’t forget to apply any available discount codes. Once everything looks good, complete your purchase confidently and enjoy fast, reliable delivery to your address."
@@ -78,8 +92,21 @@ const Checkout = () => {
             <aside className={cx("checkout_aside")}>
               <div className={cx("checkout_container")}>
                 <div className={cx("checkout_container_header")}>
-                  <h3>Your Reservation</h3>
-                  <span>Little Lemon Chicago</span>
+                  <div className={cx("checkout_container_header_restaurant")}>
+                    <img
+                      src="https://plus.unsplash.com/premium_photo-1661953124283-76d0a8436b87?q=80&w=1788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    className={cx("checkout_container_header_restaurant_infor")}
+                  >
+                    <h3>Little Lemon</h3>
+                    <span>
+                      <img src={location} alt="" />
+                      2036 2ND AVE, NEW YORK, NY 10029
+                    </span>
+                  </div>
                 </div>
                 <div className={cx("checkout_container_date_time")}>
                   <div className={cx("checkout_container_date")}>
@@ -137,6 +164,7 @@ const Checkout = () => {
                     <h3>Total Price</h3>
                     <span>(Including All Taxes)</span>
                   </div>
+
                   <p>${invoiceData.total}</p>
                 </div>
               </div>
