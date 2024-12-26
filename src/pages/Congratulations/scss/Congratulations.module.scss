@@ -12,6 +12,7 @@
       text-align: center;
       font-size: 2rem;
       img {
+        max-width: 300px;
         margin: 20px 0px;
         animation: cupAnimation 2s infinite alternate;
       }
@@ -49,5 +50,26 @@
   }
   to {
     transform: translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .congratulations_section_container {
+    .congratulations_aritcle_container {
+      .congratulations_aritcle_container_title {
+        text-align: center;
+        font-size: 1rem;
+        img {
+          width: 100%;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        .congratulations_aritcle_container_check {
+          .congratulations_aritcle_container_message {
+          }
+        }
+      }
+    }
   }
 }
