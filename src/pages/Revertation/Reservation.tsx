@@ -50,25 +50,25 @@ const Reservation = () => {
     );
   }, [context?.initState.invoice.tables]);
 
-  const selectDate = () => {
-    if (dateRef.current) {
-      dateRef.current.showPicker();
+  const selectDate = (event: React.MouseEvent) => {
+    if (!dateRef.current) {
+      return;
     }
-    return;
+    dateRef.current.showPicker();
   };
-  const selectTime = () => {
+  const selectTime = (event: React.MouseEvent) => {
     if (!dateState) {
       errorAlert({
         title: "Date Selection Required",
         text: "Please select a date before proceeding.",
         icon: "warning",
-      }); 
-      return
+      });
+      return;
     }
-    if (timeRef.current) {
-      timeRef.current.showPicker();
+    if (!timeRef.current) {
+      return;
     }
-    return;
+    timeRef.current.showPicker();
   };
   const formatTime = () => {
     if (dateState) {

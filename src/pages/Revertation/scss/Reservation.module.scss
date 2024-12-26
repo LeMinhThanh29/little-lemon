@@ -154,12 +154,17 @@
             }
             .reservation_invoice_date_select,
             .reservation_invoice_time_select {
+              position: relative;
+
               label {
                 cursor: pointer;
               }
               input {
                 width: 0px;
-                visibility: hidden;
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                border: none;
               }
             }
             .reservation_invoice_date {
