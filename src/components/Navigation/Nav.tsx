@@ -48,19 +48,25 @@ const Nav = () => {
         </ul>
         <div className={cx("hambuger_nav", { visible: visible })}>
           <ul className={cx("hambuger_nav_link")}>
-            {routers.map((value, index) => (
-              <li key={index}>
-                <NavLink
-                  to={value.path}
-                  className={({ isActive }) =>
-                    isActive ? cx("active") : cx("navigation_link")
-                  }
-                  onClick={() => setVisible(false)}
-                >
-                  {value.name}
-                </NavLink>
-              </li>
-            ))}
+            {routers
+              .filter(
+                (defaultFilter) =>
+                  defaultFilter.layout?.type === "DEFAULT" &&
+                  defaultFilter.status === true
+              )
+              .map((value, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={value.path}
+                    className={({ isActive }) =>
+                      isActive ? cx("active") : cx("navigation_link")
+                    }
+                    onClick={() => setVisible(false)}
+                  >
+                    {value.name}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </div>
       </div>

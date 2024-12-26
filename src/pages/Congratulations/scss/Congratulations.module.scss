@@ -1,8 +1,7 @@
 .congratulations_section_container {
   max-width: 1440px;
   margin: auto;
-  display: flex;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   .congratulations_aritcle_container {
     .congratulations_aritcle_container_header {
       img {
@@ -12,39 +11,43 @@
     .congratulations_aritcle_container_title {
       text-align: center;
       font-size: 2rem;
-
       img {
         margin: 20px 0px;
+        animation: cupAnimation 2s infinite alternate;
       }
-    }
-    .congratulations_aritcle_container_message {
-      max-width: 650px;
-      padding: 0px 20px;
+
       p {
-        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+      .congratulations_aritcle_container_check {
+        max-width: 700px;
+        padding: 20px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 30px;
+        .congratulations_aritcle_container_message {
+          p {
+            text-align: left;
+            &:not(:first-of-type) {
+              padding-top: 20px;
+            }
+          }
+        }
       }
     }
+
     height: auto;
-    flex: 1;
-  }
-  .congratulations_aside_container {
-    background-color: blue;
-    height: 100%;
-    flex: 1;
-    width: 100%;
-    max-width: 570px;
-    padding: 20px;
-    box-sizing: border-box;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .congratulations_section_container {
-    flex-direction: column;
-
-    .congratulations_aritcle_container {
-    }
-    .congratulations_aside_container {
-    }
+@keyframes cupAnimation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
   }
 }

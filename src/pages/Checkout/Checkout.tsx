@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./scss/Checkout.module.scss";
 import {
   invoiceDataDetail,
@@ -19,6 +19,7 @@ const cx = classNames.bind(styles);
 const Checkout = () => {
   const context = useContextApi();
   const { invoiceDetailId } = useParams();
+  const navigate = useNavigate();
   const [invoiceData, setInvoiceData] = useState<InvoiceDetailModel | null>(
     null
   );
@@ -55,6 +56,7 @@ const Checkout = () => {
           "Your reservation has been confirmed.",
           "success"
         );
+        navigate("/congratulations");
         context.dispatch({ type: "CHECKOUT", payload: dataSubmit });
         localStorage.removeItem(`${invoiceDetailId}`);
       }

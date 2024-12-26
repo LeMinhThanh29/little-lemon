@@ -45,7 +45,15 @@ import VIP from "./icon/vip.png";
 import Checkout from "./icon/absence_10076111.png";
 import door from "./icon/knob_16437574.png";
 import location from "./icon/location_535239.png";
+import lemon_Congratulations from "./icon/lemon_Congratulations.png";
+import restaurant_6724513 from "./icon/restaurant_6724513.png";
+import man_10702274 from "./icon/man_10702274.png";
+import balanced from "./icon/balanced-diet.png";
 export {
+  lemon_Congratulations,
+  restaurant_6724513,
+  man_10702274,
+  balanced,
   location,
   door,
   Checkout,

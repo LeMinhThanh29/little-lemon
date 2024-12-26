@@ -60,10 +60,10 @@ export const invoiceDataDetail: InvoiceDetailModel = {
 
 export const defaultInvoiceModel: InvoiceModel = {
   invoiceId: "default-id",
-  fullname: "John Doe",
+  fullname: "default-fullname",
   phone: 1234567890,
   email: "default@example.com",
   note: "No notes",
-  occasion: "Birthday table", // Defaulting to "Other" if it is an enum
-  invoiceDetail: invoiceDataDetail, // Use the defaultInvoiceDetail
+  occasion: "Birthday table",
+  invoiceDetail: invoiceDataDetail,
 };
