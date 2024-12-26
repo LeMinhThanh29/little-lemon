@@ -51,10 +51,10 @@ const Reservation = () => {
   }, [context?.initState.invoice.tables]);
 
   const selectDate = () => {
-    if (!dateRef.current) {
-      return;
+    if (dateRef.current) {
+      dateRef.current.showPicker();
     }
-    dateRef.current.showPicker();
+    return;
   };
   const selectTime = () => {
     if (!dateState) {
@@ -62,13 +62,13 @@ const Reservation = () => {
         title: "Date Selection Required",
         text: "Please select a date before proceeding.",
         icon: "warning",
-      });
-      return;
+      }); 
+      return
     }
-    if (!timeRef.current) {
-      return;
+    if (timeRef.current) {
+      timeRef.current.showPicker();
     }
-    timeRef.current.showPicker();
+    return;
   };
   const formatTime = () => {
     if (dateState) {
